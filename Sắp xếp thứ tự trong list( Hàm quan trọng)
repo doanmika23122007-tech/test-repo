@@ -1,0 +1,17 @@
+from math import *
+from functools import cmp_to_key
+# -1 1 0
+# Neu a la thang dung truoc, b la thang dung sau sau khi ma ban sap xep
+# Neu a va b da dung thu tu ma ban muon thi tra ve -1, nguoc lai cac ban tra ve 1
+
+def cmp(a, b):
+    if a < b:
+        return -1
+    elif a > b:
+        return 1
+    else:
+        return 0
+
+a = [1, 4, 7, 2, 6, 2, 7, 3]
+a.sort(key = cmp_to_key(cmp))
+print(a)
