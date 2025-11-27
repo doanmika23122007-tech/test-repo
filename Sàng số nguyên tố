@@ -7,6 +7,7 @@ def sieve():
             for j in range(i * i, 10 ** 6 + 1, i):
                 prime[j] = False
 if __name__ == '__main__':
+    sieve()
     n = int(input())
     for i in range(n):
         if prime[i]:
