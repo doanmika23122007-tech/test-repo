@@ -1,0 +1,24 @@
+from math import *
+from functools import cmp_to_key
+# -1 1 0
+# Neu a la thang dung truoc, b la thang dung sau sau khi ma ban sap xep
+# Neu a va b da dung thu tu ma ban muon thi tra ve -1, nguoc lai cac ban tra ve 1
+
+#Sap xep cac phan tu trong mang theo thu tu tong chu so tang dan
+
+def tong(n):
+    res = 0
+    while n != 0:
+        res += n % 10
+        n //= 10
+    return res
+def cmp(a, b):
+    tong1, tong2 = tong(a), tong(b)
+    if tong1 != tong2:
+        return tong1 - tong2
+    else:
+        return a - b
+    
+a = [30, 30000000, 12, 21, 111, 9, 19, 10, 20, 39]
+a.sort(key = cmp_to_key(cmp))
+print(a)
