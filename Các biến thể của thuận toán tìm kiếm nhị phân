@@ -1,0 +1,60 @@
+from math import *
+ 
+# Tim vi tri xuat hien dau tien cua phan tu co gia tri X trong mang da sap tang dan
+def first_pos(a, left, right, x):
+    res = -1
+    while left <= right:
+        m = (left + right) // 2
+        if a[m] == x:
+            res = m
+            right = m - 1
+        elif a[m] < x:
+            left = m + 1
+        else:
+            right = m - 1
+    return res
+
+# Tìm vị trí xuất hiện cuối cùng của phần tử có giá trị x trong mang da sap tang dan
+def last_pos(a, left, right, x):
+    res = -1
+    while left <= right:
+        m = (left + right) // 2
+        if a[m] == x:
+            res = m
+            left = m + 1
+        elif a[m] < x:
+            left = m + 1
+        else:
+            right = m - 1
+    return res
+
+# Tìm vị trí xuất hiện đầu tiên của phần tử có giá trị >= x trong mảng đã sắp tăng dần            
+def first_pos1(a, left, right, x):
+    res = -1
+    while left <= right:
+        m = (left + right) // 2
+        if a[m] >= x:
+            res = m
+            right = m - 1
+        else:
+            left = m + 1    
+    return res
+
+# Tìm vị trí xuất hiện đầu tiên của phần tử có giá trị > x trong mảng đã sắp tăng dần
+def first_pos2(a, left, right, x):
+    res = -1        #Luu ket qua.
+    while left <= right:
+        m = (left + right) // 2
+        if a[m] > x:
+            res = m #Cap nhat ket qua
+            right = m - 1
+        else:
+            left = m + 1
+    return res
+
+if __name__ == '__main__':
+    a = [1, 2, 2, 2, 3, 4, 5, 6]
+    print(first_pos(a, 0, len(a) -1, 2))
+    print(last_pos(a, 0, len(a) - 1, 2))
+    print(first_pos1(a, 0, len(a) - 1, 2))
+    print(first_pos2(a, 0, len(a) - 1, 2))
