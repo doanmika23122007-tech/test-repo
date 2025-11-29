@@ -1,0 +1,18 @@
+from math import *
+ 
+ # Tim vi tri xuat hien dau tien cua phan tu co gia tri > X trong mang da sap tang dan
+ 
+def first_pos2(a, left, right, x):
+    res = -1        #Luu ket qua
+    while left <= right:
+        m = (left + right) // 2
+        if a[m] > x:
+            res = m #Cap nhat ket qua
+            right = m - 1
+        else:
+            left = m + 1
+    return res
+
+if __name__ == '__main__':
+    a = [1, 2, 2, 2, 3, 4, 5, 6]
+    print(first_pos2(a, 0, len(a) -1, 2))
