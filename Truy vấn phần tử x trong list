@@ -1,0 +1,22 @@
+from collections import Counter
+if __name__ == '__main__':
+    n = int(input())
+    a = list(map(int, input().split()))
+    a = set(a)
+    q = int(input())
+    for _ in range(q):
+        x = int(input())
+        if x in a:
+            print('yes')
+        else:
+            print('no')
+
+input: 
+5
+1 2 1 3 4
+2
+1
+6
+output:
+yes
+no
