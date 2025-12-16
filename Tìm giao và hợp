@@ -6,13 +6,13 @@ if __name__ == '__main__':
     b = list(map(int, input().split()))
     s1 = set(a)
     s2 = set(b)
-    #Tim hợp
+    #Tim giao
     s3 = list(s1.intersection(s2))
     s3.sort()
     for x in s3:
         print(x, end = ' ')
     print()
-    #Tim giao
+    #Tim hợp
     s4 = list(s1.union(s2))
     s4.sort()
     for x in s4:
